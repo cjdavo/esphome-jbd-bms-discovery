@@ -17,7 +17,7 @@ CONF_FIRMWARE_REVISION = "firmware_revision"
 CONF_SOFTWARE_REVISION = "software_revision"
 CONF_SERIAL_NUMBER = "serial_number"
 CONF_HARDWARE_REVISION = "hardware_revision"
-CONF_MANUFACTURER_NAME = "manufacturer_name'
+CONF_MANUFACTURER_NAME = "manufacturer_name"
 
 
 ICON_ERRORS = "mdi:alert-circle-outline"
