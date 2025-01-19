@@ -347,8 +347,7 @@ void JbdBmsBle::on_hardware_version_data_(const std::vector<uint8_t> &data) {
   this->publish_state_(this->model_number_text_sensor_, this->model_number_text_sensor_);
   this->publish_state_(this->device_model_text_sensor_, this->device_model_text_sensor_);
   this->publish_state_(this->manufacturer_name_text_sensor_, this->manufacturer_name_text_sensor_);
-  this->publish_state_(this->hardware_revision_text_sensor_, this->hardware_revision_text_sensor_);
-  this->publish_state_(this->software_revision_text_sensor_, this->software_revision_text_sensor_);
+ 
   this->publish_state_(this->serial_number_text_sensor_, this->serial_number_text_sensor_);
 }
 
