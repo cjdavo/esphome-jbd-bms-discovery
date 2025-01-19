@@ -112,21 +112,11 @@ class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingCompo
     operation_status_text_sensor_ = operation_status_text_sensor;
   }
   void set_errors_text_sensor(text_sensor::TextSensor *errors_text_sensor) { errors_text_sensor_ = errors_text_sensor; }
-  void set_device_model_text_sensor(text_sensor::TextSensor *device_model_text_sensor) {
-    device_model_text_sensor_ = device_model_text_sensor;
-  }
- void set_device_manufacturer_name_text_sensor(text_sensor::TextSensor *manufacturer_name) {
-    manufacturer_name_ = manufacturer_name;
-  }
- void set_model_number(text_sensor::TextSensor *model_number) {
-    model_number_ = model_number;
-  }
- void set_hardware_revision(text_sensor::TextSensor *hardware_revision) {
-    hardware_revision_ = hardware_revision;
-  }
- void set_software_revision(text_sensor::TextSensor *software_revision) {
-    software_revision_ = software_revision;
-  }
+  void set_device_model_text_sensor(text_sensor::TextSensor *device_model_text_sensor) { device_model_text_sensor_ = device_model_text_sensor; }
+  void set_device_manufacturer_name_text_sensor(text_sensor::TextSensor *manufacturer_name_text_sensor) { manufacturer_name_text_sensor_ = manufacturer_name_text_sensor; }
+  void set_model_number_text_sensor(text_sensor::TextSensor *model_number_text_sensor) { model_number_text_sensor_ = model_number_text_sensor; }
+  void set_hardware_revision_text_sensor(text_sensor::TextSensor *hardware_revision_text_sensor) { hardware_revision_text_sensor_ = hardware_revision_text_sensor; }
+  void set_software_revision_text_sensor(text_sensor::TextSensor *software_revision_text_sensor) { software_revision_text_sensor_ = software_revision_text_sensor; }
 
   bool send_command(uint8_t action, uint8_t function);
   bool write_register(uint8_t address, uint16_t value);
@@ -170,12 +160,12 @@ class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingCompo
   text_sensor::TextSensor *errors_text_sensor_;
   text_sensor::TextSensor *device_model_text_sensor_;
 
-  text_sensor::TextSensor *manufacturer_name_;  // Manufacturer Name
-  text_sensor::TextSensor *model_number_;       // Model Number
-  text_sensor::TextSensor *serial_number_;      // Serial Number
-  text_sensor::TextSensor *hardware_revision_;  // Hardware Revision
-  text_sensor::TextSensor *firmware_revision_;  // Firmware Revision
-  text_sensor::TextSensor *software_revision_;  // Software Revision
+  text_sensor::TextSensor *manufacturer_name_text_sensor_;  // Manufacturer Name
+  text_sensor::TextSensor *model_number_text_sensor_;       // Model Number
+  text_sensor::TextSensor *serial_number_text_sensor_;      // Serial Number
+  text_sensor::TextSensor *hardware_revision_text_sensor_;  // Hardware Revision
+  text_sensor::TextSensor *firmware_revision_text_sensor_;  // Firmware Revision
+  text_sensor::TextSensor *software_revision_text_sensor_;  // Software Revision
 
   struct Cell {
     sensor::Sensor *cell_voltage_sensor_{nullptr};
