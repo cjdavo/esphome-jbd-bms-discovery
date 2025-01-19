@@ -192,6 +192,11 @@ class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingCompo
   std::vector<uint8_t> frame_buffer_;
   std::string device_model_{""};
   std::string model_number_{""};
+  std::string manufacturer_name_{""};
+  std::string software_revision_{""};
+  std::string hardware_revision_{""};
+  std::string serial_number_{""};
+  std::string firmware_revision_{""};
 
   uint16_t char_notify_handle_;
   uint16_t char_command_handle_;
