@@ -115,6 +115,18 @@ class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingCompo
   void set_device_model_text_sensor(text_sensor::TextSensor *device_model_text_sensor) {
     device_model_text_sensor_ = device_model_text_sensor;
   }
+ void set_device_manufacturer_name_text_sensor(text_sensor::TextSensor *device_manufacturer_name_text_sensor) {
+    device_manufacturer_name_text_sensor_ = device_manufacturer_name_text_sensor;
+  }
+ void set_device_model_number_text_sensor(text_sensor::TextSensor *device_model_number_text_sensor) {
+    device_model_number_text_sensor_ = device_model_number_text_sensor;
+  }
+ void set_device_hardware_revision_text_sensor(text_sensor::TextSensor *device_hardware_revision_text_sensor) {
+    device_hardware_revision_text_sensor_ = device_hardware_revision_text_sensor;
+  }
+ void set_device_software_revision_text_sensor(text_sensor::TextSensor *device_software_revision_text_sensor) {
+    device_software_revision_text_sensor_ = device_software_revision_text_sensor;
+  }
 
   bool send_command(uint8_t action, uint8_t function);
   bool write_register(uint8_t address, uint16_t value);
@@ -157,6 +169,7 @@ class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingCompo
   text_sensor::TextSensor *operation_status_text_sensor_;
   text_sensor::TextSensor *errors_text_sensor_;
   text_sensor::TextSensor *device_model_text_sensor_;
+
   text_sensor::TextSensor *manufacturer_name_;  // Manufacturer Name
   text_sensor::TextSensor *model_number_;       // Model Number
   text_sensor::TextSensor *serial_number_;      // Serial Number
