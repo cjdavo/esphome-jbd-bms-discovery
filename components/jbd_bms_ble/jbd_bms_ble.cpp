@@ -339,11 +339,11 @@ void JbdBmsBle::on_hardware_version_data_(const std::vector<uint8_t> &data) {
   this->device_model_ = std::string(data.begin(), data.end());
 
   ESP_LOGI(TAG, "  Model name: %s", this->device_model_.c_str());
-  this->publish_state_(this->model_number_, this->model_number_);
-  this->publish_state_(this->device_model_, this->device_model_);
-  this->publish_state_(this->manufacturer_name_, this->manufacturer_name_);
-  this->publish_state_(this->hardware_revision_, this->hardware_revision_);
-  this->publish_state_(this->software_revision_, this->software_revision_);
+  this->publish_state_(this->model_number_text_sensor_, this->model_number_text_sensor_);
+  this->publish_state_(this->device_model_text_sensor_, this->device_model_text_sensor_);
+  this->publish_state_(this->manufacturer_name_text_sensor_, this->manufacturer_name_text_sensor_);
+  this->publish_state_(this->hardware_revision_text_sensor_, this->hardware_revision_text_sensor_);
+  this->publish_state_(this->software_revision_text_sensor_, this->software_revision_text_sensor_);
 }
 
 void JbdBmsBle::track_online_status_() {
