@@ -390,13 +390,13 @@ void JbdBmsBle::publish_device_unavailable_() {
   this->publish_state_(balancer_status_bitmask_sensor_, NAN);
   this->publish_state_(battery_strings_sensor_, NAN);
   this->publish_state_(temperature_sensors_sensor_, NAN);
-  this->publish_state_(software_version_sensor_, NAN);
-  this->publish_state_(software_revision_text_sensor_, NAN);
-  this->publish_state_(firmware_revision_text_sensor_, NAN);
-  this->publish_state_(model_number_text_sensor_, NAN);
-    this->publish_state_(device_model_text_sensor_, NAN);
-  this->publish_state_(serial_number_text_sensor_, NAN);
-  this->publish_state_(manufacturer_name_text_sensor_, NAN);
+//  this->publish_state_(software_version_sensor_, NAN);
+//  this->publish_state_(software_revision_text_sensor_, NAN);
+ // this->publish_state_(firmware_revision_text_sensor_, NAN);
+//  this->publish_state_(model_number_text_sensor_, NAN);
+ //   this->publish_state_(device_model_text_sensor_, NAN);
+ // this->publish_state_(serial_number_text_sensor_, NAN);
+ // this->publish_state_(manufacturer_name_text_sensor_, NAN);
 
   for (auto &temperature : this->temperatures_) {
     this->publish_state_(temperature.temperature_sensor_, NAN);
