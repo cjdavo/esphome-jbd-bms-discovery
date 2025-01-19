@@ -338,7 +338,7 @@ void JbdBmsBle::on_hardware_version_data_(const std::vector<uint8_t> &data) {
   this->device_model_ = std::string(data.begin(), data.end());
 
   ESP_LOGI(TAG, "  Model name: %s", this->device_model_.c_str());
-  this->publish_state_(this->device_model_text_sensor_, this->device_model_);
+  this->publish_state_(this->device_model_, this->device_model_);
 }
 
 void JbdBmsBle::track_online_status_() {
