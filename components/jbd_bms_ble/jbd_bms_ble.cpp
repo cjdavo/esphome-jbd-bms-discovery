@@ -299,6 +299,7 @@ void JbdBmsBle::on_hardware_info_data_(const std::vector<uint8_t> &data) {
 
   // 18    1   0x80                   Version                                      0x10 = 1.0, 0x80 = 8.0
   this->publish_state_(this->software_version_sensor_, (data[18] >> 4) + ((data[18] & 0x0f) * 0.1f));
+  this->publish_state_(this->software_revision_text_sensor_, (data[18] >> 4) + ((data[18] & 0x0f) * 0.1f));
 
   // 19    1   0x64                   State of charge
   this->publish_state_(this->state_of_charge_sensor_, data[19]);
@@ -338,7 +339,11 @@ void JbdBmsBle::on_hardware_version_data_(const std::vector<uint8_t> &data) {
   this->device_model_ = std::string(data.begin(), data.end());
 
   ESP_LOGI(TAG, "  Model name: %s", this->device_model_.c_str());
+  this->publish_state_(this->model_number_, this->model_number_);
   this->publish_state_(this->device_model_, this->device_model_);
+  this->publish_state_(this->manufacturer_name_, this->manufacturer_name_);
+  this->publish_state_(this->hardware_revision_, this->hardware_revision_);
+  this->publish_state_(this->software_revision_, this->software_revision_);
 }
 
 void JbdBmsBle::track_online_status_() {
