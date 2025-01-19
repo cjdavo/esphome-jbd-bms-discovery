@@ -195,6 +195,7 @@ class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingCompo
   void assemble_(const uint8_t *data, uint16_t length);
   void on_cell_info_data_(const std::vector<uint8_t> &data);
   void on_hardware_info_data_(const std::vector<uint8_t> &data);
+  void on_discover_device_info_(const std::vector<uint8_t> &data);
   void on_hardware_version_data_(const std::vector<uint8_t> &data);
   void publish_state_(binary_sensor::BinarySensor *binary_sensor, const bool &state);
   void publish_state_(sensor::Sensor *sensor, float value);
