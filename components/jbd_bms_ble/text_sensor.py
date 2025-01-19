@@ -14,7 +14,7 @@ CONF_OPERATION_STATUS = "operation_status"
 CONF_DEVICE_MODEL = "device_model"
 CONF_MODEL_NUMBER = "model_number"
 CONF_FIRMWARE_REVISION = "firmware_revision"
-CONF_SOFTWARE_REVISION = "software_revision"
+
 CONF_SERIAL_NUMBER = "serial_number"
 CONF_HARDWARE_REVISION = "hardware_revision"
 CONF_MANUFACTURER_NAME = "manufacturer_name"
@@ -30,7 +30,7 @@ TEXT_SENSORS = [
     CONF_DEVICE_MODEL,
     CONF_MODEL_NUMBER,
     CONF_FIRMWARE_REVISION,
-    CONF_SOFTWARE_REVISION,
+    
     CONF_SERIAL_NUMBER,
     CONF_HARDWARE_REVISION,
     CONF_MANUFACTURER_NAME,
@@ -69,12 +69,7 @@ CONFIG_SCHEMA = cv.Schema(
                 cv.Optional(CONF_ICON, default=ICON_DEVICE_MODEL): cv.icon,
             }
         ),
-        cv.Optional(CONF_SOFTWARE_REVISION): text_sensor.TEXT_SENSOR_SCHEMA.extend(
-            {
-                cv.GenerateID(): cv.declare_id(text_sensor.TextSensor),
-                cv.Optional(CONF_ICON, default=ICON_DEVICE_MODEL): cv.icon,
-            }
-        ),
+        
         cv.Optional(CONF_HARDWARE_REVISION): text_sensor.TEXT_SENSOR_SCHEMA.extend(
             {
                 cv.GenerateID(): cv.declare_id(text_sensor.TextSensor),
