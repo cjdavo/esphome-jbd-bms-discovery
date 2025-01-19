@@ -582,15 +582,22 @@ void JbdBmsBle::discover_device_info() {
   ESP_LOGI(TAG, "Discovering Device Information Service...");
 
   // Placeholder for actual GATT reads (populate with real data retrieval)
-  this->manufacturer_name_->publish_state("Example Manufacturer");
-  this->model_number_->publish_state("Model 123");
-  this->serial_number_->publish_state("SN123456789");
-  this->hardware_revision_->publish_state("Rev 1.0");
-  this->firmware_revision_->publish_state("FW 1.2.3");
-  this->software_revision_->publish_state("SW 4.5.6");
+//  this->manufacturer_name_->publish_state("Example Manufacturer");
+  this->publish_state_(this->manufacturer_name_, this->manufacturer_name_);
+ // this->model_number_->publish_state("Model 123");
+  this->publish_state_(this->model_number_, this->model_number_);
+ // this->serial_number_->publish_state("SN123456789");
+  this->publish_state_(this->serial_number_, this->serial_number_);
+ // this->hardware_revision_->publish_state("Rev 1.0");
+  this->publish_state_(this->device_model_text_sensor_, this->device_model_);
+ // this->firmware_revision_->publish_state("FW 1.2.3");
+  this->publish_state_(this->firmware_revision_, this->firmware_revision_);
+ // this->software_revision_->publish_state("SW 4.5.6");
+  this->publish_state_(this->software_revision_, this->software_revision_);
 
   ESP_LOGI(TAG, "Manufacturer Name: Example Manufacturer");
   ESP_LOGI(TAG, "Model Number: Model 123");
+    
   ESP_LOGI(TAG, "Serial Number: SN123456789");
   ESP_LOGI(TAG, "Hardware Revision: Rev 1.0");
   ESP_LOGI(TAG, "Firmware Revision: FW 1.2.3");
