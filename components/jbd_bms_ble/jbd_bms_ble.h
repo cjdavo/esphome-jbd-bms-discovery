@@ -113,7 +113,7 @@ class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingCompo
   }
   void set_errors_text_sensor(text_sensor::TextSensor *errors_text_sensor) { errors_text_sensor_ = errors_text_sensor; }
   void set_device_model_text_sensor(text_sensor::TextSensor *device_model_text_sensor) { device_model_text_sensor_ = device_model_text_sensor; }
-  void set_device_manufacturer_name_text_sensor(text_sensor::TextSensor *manufacturer_name_text_sensor) { manufacturer_name_text_sensor_ = manufacturer_name_text_sensor; }
+  void set_manufacturer_name_text_sensor(text_sensor::TextSensor *manufacturer_name_text_sensor) { manufacturer_name_text_sensor_ = manufacturer_name_text_sensor; }
   void set_model_number_text_sensor(text_sensor::TextSensor *model_number_text_sensor) { model_number_text_sensor_ = model_number_text_sensor; }
   void set_hardware_revision_text_sensor(text_sensor::TextSensor *hardware_revision_text_sensor) { hardware_revision_text_sensor_ = hardware_revision_text_sensor; }
   void set_software_revision_text_sensor(text_sensor::TextSensor *software_revision_text_sensor) { software_revision_text_sensor_ = software_revision_text_sensor; }
