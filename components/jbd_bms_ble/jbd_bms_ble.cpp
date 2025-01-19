@@ -603,7 +603,7 @@ void JbdBmsBle::discover_device_info() {
  // this->firmware_revision_->publish_state("FW 1.2.3");
   this->publish_state_(this->firmware_revision_text_sensor_, this->firmware_revision_text_sensor_);
  // this->software_revision_->publish_state("SW 4.5.6");
-  this->publish_state_(this->software_revision__text_sensor, this->software_revision_text_sensor_);
+  this->publish_state_(this->software_revision_text_sensor_, this->software_revision_text_sensor_);
 
   ESP_LOGI(TAG, "Manufacturer Name: Example Manufacturer");
   ESP_LOGI(TAG, "Model Number: Model 123");
