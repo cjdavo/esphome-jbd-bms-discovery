@@ -77,6 +77,9 @@ void JbdBmsBle::gattc_event_handler(esp_gattc_cb_event_t event, esp_gatt_if_t ga
       break;
     }
     case ESP_GATTC_SEARCH_CMPL_EVT: {
+  ESP_LOGI(TAG, "GATT search completed. Discovering Device Information Service...");
+  this->discover_device_info();  // Discover DIS when GATT search completes
+
       auto *char_notify = this->parent_->get_characteristic(JBD_BMS_SERVICE_UUID, JBD_BMS_NOTIFY_CHARACTERISTIC_UUID);
       if (char_notify == nullptr) {
         ESP_LOGE(TAG, "[%s] No notify service found at device, not an JBD BMS..?",
@@ -574,5 +577,23 @@ std::string JbdBmsBle::error_bits_to_string_(const uint16_t mask) {
   return values;
 }
 
+void JbdBmsBle::discover_device_info() {
+  ESP_LOGI(TAG, "Discovering Device Information Service...");
+
+  // Placeholder for actual GATT reads (populate with real data retrieval)
+  this->manufacturer_name_->publish_state("Example Manufacturer");
+  this->model_number_->publish_state("Model 123");
+  this->serial_number_->publish_state("SN123456789");
+  this->hardware_revision_->publish_state("Rev 1.0");
+  this->firmware_revision_->publish_state("FW 1.2.3");
+  this->software_revision_->publish_state("SW 4.5.6");
+
+  ESP_LOGI(TAG, "Manufacturer Name: Example Manufacturer");
+  ESP_LOGI(TAG, "Model Number: Model 123");
+  ESP_LOGI(TAG, "Serial Number: SN123456789");
+  ESP_LOGI(TAG, "Hardware Revision: Rev 1.0");
+  ESP_LOGI(TAG, "Firmware Revision: FW 1.2.3");
+  ESP_LOGI(TAG, "Software Revision: SW 4.5.6");
+}
 }  // namespace jbd_bms_ble
 }  // namespace esphome
