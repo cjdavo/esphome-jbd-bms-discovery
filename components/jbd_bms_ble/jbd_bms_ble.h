@@ -118,13 +118,13 @@ class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingCompo
  void set_device_manufacturer_name_text_sensor(text_sensor::TextSensor *manufacturer_name) {
     manufacturer_name_ = manufacturer_name;
   }
- void set_device_model_number_text_sensor(text_sensor::TextSensor *model_number) {
+ void set_model_number(text_sensor::TextSensor *model_number) {
     model_number_ = model_number;
   }
- void set_device_hardware_revision_text_sensor(text_sensor::TextSensor *hardware_revision) {
+ void set_hardware_revision(text_sensor::TextSensor *hardware_revision) {
     hardware_revision_ = hardware_revision;
   }
- void set_device_software_revision_text_sensor(text_sensor::TextSensor *software_revision) {
+ void set_software_revision(text_sensor::TextSensor *software_revision) {
     software_revision_ = software_revision;
   }
 
