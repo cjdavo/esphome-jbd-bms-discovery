@@ -21,7 +21,7 @@ namespace espbt = esphome::esp32_ble_tracker;
 
 class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingComponent {
  public:
-  // void discover_device_info();  // New method for discovering DIS
+ 
   void gattc_event_handler(esp_gattc_cb_event_t event, esp_gatt_if_t gattc_if,
                            esp_ble_gattc_cb_param_t *param) override;
   void dump_config() override;
@@ -120,15 +120,8 @@ class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingCompo
   bool write_register(uint8_t address, uint16_t value);
   bool change_mosfet_status(uint8_t address, uint8_t bitmask, bool state);
   void on_jbd_bms_data(const uint8_t &function, const std::vector<uint8_t> &data);
-
- private:
-  text_sensor::TextSensor *manufacturer_name_;  // Manufacturer Name
-  text_sensor::TextSensor *model_number_;       // Model Number
-  text_sensor::TextSensor *serial_number_;      // Serial Number
-  text_sensor::TextSensor *hardware_revision_;  // Hardware Revision
-  text_sensor::TextSensor *firmware_revision_;  // Firmware Revision
-  text_sensor::TextSensor *software_revision_;  // Software Revision
-
+  void discover_device_info();  // New method for discovering DIS
+ 
  protected:
   binary_sensor::BinarySensor *balancing_binary_sensor_;
   binary_sensor::BinarySensor *charging_binary_sensor_;
@@ -164,6 +157,12 @@ class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingCompo
   text_sensor::TextSensor *operation_status_text_sensor_;
   text_sensor::TextSensor *errors_text_sensor_;
   text_sensor::TextSensor *device_model_text_sensor_;
+  text_sensor::TextSensor *manufacturer_name_;  // Manufacturer Name
+  text_sensor::TextSensor *model_number_;       // Model Number
+  text_sensor::TextSensor *serial_number_;      // Serial Number
+  text_sensor::TextSensor *hardware_revision_;  // Hardware Revision
+  text_sensor::TextSensor *firmware_revision_;  // Firmware Revision
+  text_sensor::TextSensor *software_revision_;  // Software Revision
 
   struct Cell {
     sensor::Sensor *cell_voltage_sensor_{nullptr};
