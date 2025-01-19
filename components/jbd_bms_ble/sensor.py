@@ -46,6 +46,7 @@ CONF_ERRORS_BITMASK = "errors_bitmask"
 CONF_BALANCER_STATUS_BITMASK = "balancer_status_bitmask"
 CONF_BATTERY_STRINGS = "battery_strings"
 CONF_SOFTWARE_VERSION = "software_version"
+CONF_SOFTWARE_REVISION = "software_revision"
 
 CONF_CELL_VOLTAGE_1 = "cell_voltage_1"
 CONF_CELL_VOLTAGE_2 = "cell_voltage_2"
@@ -101,6 +102,7 @@ ICON_OPERATION_STATUS_BITMASK = "mdi:heart-pulse"
 ICON_ERRORS_BITMASK = "mdi:alert-circle-outline"
 ICON_BALANCER_STATUS_BITMASK = "mdi:seesaw"
 ICON_SOFTWARE_VERSION = "mdi:numeric"
+ICON_SOFTWARE_REVISION = "mdi:numeric"
 
 UNIT_SECONDS = "s"
 UNIT_HOURS = "h"
@@ -171,6 +173,7 @@ SENSORS = [
     CONF_BALANCER_STATUS_BITMASK,
     CONF_BATTERY_STRINGS,
     CONF_SOFTWARE_VERSION,
+    CONF_SOFTWARE_REVISION,
 ]
 
 # pylint: disable=too-many-function-args
@@ -585,6 +588,13 @@ CONFIG_SCHEMA = cv.Schema(
         cv.Optional(CONF_SOFTWARE_VERSION): sensor.sensor_schema(
             unit_of_measurement=UNIT_EMPTY,
             icon=ICON_SOFTWARE_VERSION,
+            accuracy_decimals=1,
+            device_class=DEVICE_CLASS_EMPTY,
+            state_class=STATE_CLASS_MEASUREMENT,
+        ),
+        cv.Optional(CONF_SOFTWARE_REVISION): sensor.sensor_schema(
+            unit_of_measurement=UNIT_EMPTY,
+            icon=ICON_SOFTWARE_REVISION,
             accuracy_decimals=1,
             device_class=DEVICE_CLASS_EMPTY,
             state_class=STATE_CLASS_MEASUREMENT,
