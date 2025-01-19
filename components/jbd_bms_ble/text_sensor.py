@@ -12,6 +12,12 @@ CODEOWNERS = ["@syssi"]
 CONF_ERRORS = "errors"
 CONF_OPERATION_STATUS = "operation_status"
 CONF_DEVICE_MODEL = "device_model"
+CONF_DEVICE_MODEL_NUMBER = "device_model_number"
+CONF_FIRMWARE_REVISION = "firmware_revision"
+CONF_SOFTWARE_REVISION = "software_revision"
+CONF_SERIAL_NUMBER = "serial_number"
+CONF_HARDWARE_REVISION = "hardware_revision"
+
 
 ICON_ERRORS = "mdi:alert-circle-outline"
 ICON_OPERATION_STATUS = "mdi:heart-pulse"
@@ -21,6 +27,11 @@ TEXT_SENSORS = [
     CONF_ERRORS,
     CONF_OPERATION_STATUS,
     CONF_DEVICE_MODEL,
+    CONF_DEVICE_MODEL_NUMBER,
+    CONF_FIRMWARE_REVISION,
+    CONF_SOFTWARE_REVISION,
+    CONF_SERIAL_NUMBER,
+    CONF_HARDWARE_REVISION,
 ]
 
 CONFIG_SCHEMA = cv.Schema(
