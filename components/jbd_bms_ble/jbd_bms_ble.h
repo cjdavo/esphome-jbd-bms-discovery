@@ -117,6 +117,8 @@ class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingCompo
   void set_model_number_text_sensor(text_sensor::TextSensor *model_number_text_sensor) { model_number_text_sensor_ = model_number_text_sensor; }
   void set_hardware_revision_text_sensor(text_sensor::TextSensor *hardware_revision_text_sensor) { hardware_revision_text_sensor_ = hardware_revision_text_sensor; }
   void set_software_revision_text_sensor(text_sensor::TextSensor *software_revision_text_sensor) { software_revision_text_sensor_ = software_revision_text_sensor; }
+  void set_serial_number_text_sensor(text_sensor::TextSensor *serial_number_text_sensor) { serial_number_text_sensor_ = serial_number_text_sensor; }
+
 
   bool send_command(uint8_t action, uint8_t function);
   bool write_register(uint8_t address, uint16_t value);
