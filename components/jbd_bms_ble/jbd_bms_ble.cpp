@@ -299,7 +299,7 @@ void JbdBmsBle::on_hardware_info_data_(const std::vector<uint8_t> &data) {
 
   // 18    1   0x80                   Version                                      0x10 = 1.0, 0x80 = 8.0
   this->publish_state_(this->software_version_sensor_, (data[18] >> 4) + ((data[18] & 0x0f) * 0.1f));
-  this->publish_state_(this->software_revision_text_sensor_, (data[18] >> 4) + ((data[18] & 0x0f) * 0.1f));
+  this->publish_state_(this->software_revision_sensor_, (data[18] >> 4) + ((data[18] & 0x0f) * 0.1f));
 
   // 19    1   0x64                   State of charge
   this->publish_state_(this->state_of_charge_sensor_, data[19]);
