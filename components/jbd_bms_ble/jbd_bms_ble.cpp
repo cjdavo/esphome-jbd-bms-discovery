@@ -594,7 +594,7 @@ void JbdBmsBle::discover_device_info() {
  // this->serial_number_->publish_state("SN123456789");
   this->publish_state_(this->serial_number_text_sensor_, this->serial_number_text_sensor_);
  // this->hardware_revision_->publish_state("Rev 1.0");
-  this->publish_state_(this->device_model_text_sensor_, this->device_model_text_sensor_);
+  this->publish_state_(this->hardware_revision_text_sensor_, this->hardware_revision_text_sensor_);
  // this->firmware_revision_->publish_state("FW 1.2.3");
   this->publish_state_(this->firmware_revision_text_sensor_, this->firmware_revision_text_sensor_);
  // this->software_revision_->publish_state("SW 4.5.6");
