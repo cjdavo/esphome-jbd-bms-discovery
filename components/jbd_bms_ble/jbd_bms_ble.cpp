@@ -596,28 +596,28 @@ std::string JbdBmsBle::error_bits_to_string_(const uint16_t mask) {
 void JbdBmsBle::discover_device_info() {
   ESP_LOGI(TAG, "Discovering Device Information Service...");
 
-  // Placeholder for actual GATT reads (populate with real data retrieval)
-//  this->manufacturer_name_->publish_state("Example Manufacturer");
-  this->publish_state_(this->manufacturer_name_text_sensor_, this->manufacturer_name_text_sensor_);
- // this->model_number_->publish_state("Model 123");
-  this->publish_state_(this->model_number_text_sensor_, this->model_number_text_sensor_);
-    this->publish_state_(this->device_model_text_sensor_, this->device_model_text_sensor_);
- // this->serial_number_->publish_state("SN123456789");
-  this->publish_state_(this->serial_number_text_sensor_, this->serial_number_text_sensor_);
- // this->hardware_revision_->publish_state("Rev 1.0");
-  this->publish_state_(this->hardware_revision_text_sensor_, this->hardware_revision_text_sensor_);
- // this->firmware_revision_->publish_state("FW 1.2.3");
-  this->publish_state_(this->firmware_revision_text_sensor_, this->firmware_revision_text_sensor_);
- // this->software_revision_->publish_state("SW 4.5.6");
-  this->publish_state_(this->software_revision_text_sensor_, this->software_revision_text_sensor_);
+//   // Placeholder for actual GATT reads (populate with real data retrieval)
+// //  this->manufacturer_name_->publish_state("Example Manufacturer");
+//   this->publish_state_(this->manufacturer_name_text_sensor_, this->manufacturer_name_text_sensor_);
+//  // this->model_number_->publish_state("Model 123");
+//   this->publish_state_(this->model_number_text_sensor_, this->model_number_text_sensor_);
+//     this->publish_state_(this->device_model_text_sensor_, this->device_model_text_sensor_);
+//  // this->serial_number_->publish_state("SN123456789");
+//   this->publish_state_(this->serial_number_text_sensor_, this->serial_number_text_sensor_);
+//  // this->hardware_revision_->publish_state("Rev 1.0");
+//   this->publish_state_(this->hardware_revision_text_sensor_, this->hardware_revision_text_sensor_);
+//  // this->firmware_revision_->publish_state("FW 1.2.3");
+//   this->publish_state_(this->firmware_revision_text_sensor_, this->firmware_revision_text_sensor_);
+//  // this->software_revision_->publish_state("SW 4.5.6");
+//   this->publish_state_(this->software_revision_text_sensor_, this->software_revision_text_sensor_);
 
-  ESP_LOGI(TAG, "Manufacturer Name: Example Manufacturer");
-  ESP_LOGI(TAG, "Model Number: Model 123");
+//   ESP_LOGI(TAG, "Manufacturer Name: Example Manufacturer");
+//   ESP_LOGI(TAG, "Model Number: Model 123");
     
-  ESP_LOGI(TAG, "Serial Number: SN123456789");
-  ESP_LOGI(TAG, "Hardware Revision: Rev 1.0");
-  ESP_LOGI(TAG, "Firmware Revision: FW 1.2.3");
-  ESP_LOGI(TAG, "Software Revision: SW 4.5.6");
+//   ESP_LOGI(TAG, "Serial Number: SN123456789");
+//   ESP_LOGI(TAG, "Hardware Revision: Rev 1.0");
+//   ESP_LOGI(TAG, "Firmware Revision: FW 1.2.3");
+//   ESP_LOGI(TAG, "Software Revision: SW 4.5.6");
 }
 }  // namespace jbd_bms_ble
 }  // namespace esphome
