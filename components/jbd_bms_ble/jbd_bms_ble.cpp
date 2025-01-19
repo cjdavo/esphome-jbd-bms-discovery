@@ -390,6 +390,7 @@ void JbdBmsBle::publish_device_unavailable_() {
   this->publish_state_(software_revision_text_sensor_, NAN);
   this->publish_state_(firmware_revision_text_sensor_, NAN);
   this->publish_state_(model_number_text_sensor_, NAN);
+    this->publish_state_(device_model_text_sensor_, NAN);
   this->publish_state_(serial_number_text_sensor_, NAN);
   this->publish_state_(manufacturer_name_text_sensor_, NAN);
 
@@ -597,6 +598,7 @@ void JbdBmsBle::discover_device_info() {
   this->publish_state_(this->manufacturer_name_text_sensor_, this->manufacturer_name_text_sensor_);
  // this->model_number_->publish_state("Model 123");
   this->publish_state_(this->model_number_text_sensor_, this->model_number_text_sensor_);
+    this->publish_state_(this->device_model_text_sensor_, this->device_model_text_sensor_);
  // this->serial_number_->publish_state("SN123456789");
   this->publish_state_(this->serial_number_text_sensor_, this->serial_number_text_sensor_);
  // this->hardware_revision_->publish_state("Rev 1.0");
