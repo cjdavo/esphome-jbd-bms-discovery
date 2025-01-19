@@ -15,6 +15,19 @@
 namespace esphome {
 namespace jbd_bms_ble {
 
+// Add new text sensors for DIS
+class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingComponent {
+ public:
+  void discover_device_info();  // New method for discovering DIS
+ private:
+  text_sensor::TextSensor *manufacturer_name_;  // Manufacturer Name
+  text_sensor::TextSensor *model_number_;       // Model Number
+  text_sensor::TextSensor *serial_number_;      // Serial Number
+  text_sensor::TextSensor *hardware_revision_;  // Hardware Revision
+  text_sensor::TextSensor *firmware_revision_;  // Firmware Revision
+  text_sensor::TextSensor *software_revision_;  // Software Revision
+
+
 namespace espbt = esphome::esp32_ble_tracker;
 
 class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingComponent {
