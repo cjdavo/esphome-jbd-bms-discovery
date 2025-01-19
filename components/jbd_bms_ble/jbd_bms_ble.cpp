@@ -381,11 +381,11 @@ void JbdBmsBle::publish_device_unavailable_() {
   this->publish_state_(battery_strings_sensor_, NAN);
   this->publish_state_(temperature_sensors_sensor_, NAN);
   this->publish_state_(software_version_sensor_, NAN);
-  this->publish_state_(software_revision_, NAN);
-  this->publish_state_(firmware_revision_, NAN);
-  this->publish_state_(model_number_, NAN);
-  this->publish_state_(serial_number_, NAN);
-  this->publish_state_(manufacturer_name_, NAN);
+  this->publish_state_(software_revision_text_sensor_, NAN);
+  this->publish_state_(firmware_revision_text_sensor_, NAN);
+  this->publish_state_(model_number_text_sensor_, NAN);
+  this->publish_state_(serial_number_text_sensor_, NAN);
+  this->publish_state_(manufacturer_name_text_sensor_, NAN);
 
   for (auto &temperature : this->temperatures_) {
     this->publish_state_(temperature.temperature_sensor_, NAN);
@@ -588,17 +588,17 @@ void JbdBmsBle::discover_device_info() {
 
   // Placeholder for actual GATT reads (populate with real data retrieval)
 //  this->manufacturer_name_->publish_state("Example Manufacturer");
-  this->publish_state_(this->manufacturer_name_, this->manufacturer_name_);
+  this->publish_state_(this->manufacturer_name_text_sensor_, this->manufacturer_name_text_sensor_);
  // this->model_number_->publish_state("Model 123");
-  this->publish_state_(this->model_number_, this->model_number_);
+  this->publish_state_(this->model_number_text_sensor_, this->model_number_text_sensor_);
  // this->serial_number_->publish_state("SN123456789");
-  this->publish_state_(this->serial_number_, this->serial_number_);
+  this->publish_state_(this->serial_number_text_sensor_, this->serial_number_text_sensor_);
  // this->hardware_revision_->publish_state("Rev 1.0");
-  this->publish_state_(this->device_model_text_sensor_, this->device_model_);
+  this->publish_state_(this->device_model_text_sensor_, this->device_model_text_sensor_);
  // this->firmware_revision_->publish_state("FW 1.2.3");
-  this->publish_state_(this->firmware_revision_, this->firmware_revision_);
+  this->publish_state_(this->firmware_revision_text_sensor_, this->firmware_revision_text_sensor_);
  // this->software_revision_->publish_state("SW 4.5.6");
-  this->publish_state_(this->software_revision_, this->software_revision_);
+  this->publish_state_(this->software_revision__text_sensor, this->software_revision_text_sensor_);
 
   ESP_LOGI(TAG, "Manufacturer Name: Example Manufacturer");
   ESP_LOGI(TAG, "Model Number: Model 123");
