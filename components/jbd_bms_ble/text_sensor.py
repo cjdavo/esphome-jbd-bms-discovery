@@ -75,6 +75,12 @@ CONFIG_SCHEMA = cv.Schema(
                 cv.Optional(CONF_ICON, default=ICON_DEVICE_MODEL): cv.icon,
             }
         ),
+        cv.Optional(CONF_HARDWARE_REVISION): text_sensor.TEXT_SENSOR_SCHEMA.extend(
+            {
+                cv.GenerateID(): cv.declare_id(text_sensor.TextSensor),
+                cv.Optional(CONF_ICON, default=ICON_DEVICE_MODEL): cv.icon,
+            }
+        ),
         cv.Optional(CONF_MODEL_NUMBER): text_sensor.TEXT_SENSOR_SCHEMA.extend(
             {
                 cv.GenerateID(): cv.declare_id(text_sensor.TextSensor),
