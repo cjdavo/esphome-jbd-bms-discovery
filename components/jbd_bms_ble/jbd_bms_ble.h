@@ -97,6 +97,9 @@ class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingCompo
   void set_software_version_sensor(sensor::Sensor *software_version_sensor) {
     software_version_sensor_ = software_version_sensor;
   }
+  void set_software_revision_sensor(sensor::Sensor *software_revision_sensor) {
+    software_revision_sensor_ = software_revision_sensor;
+  }
   void set_cell_voltage_sensor(uint8_t cell, sensor::Sensor *cell_voltage_sensor) {
     this->cells_[cell].cell_voltage_sensor_ = cell_voltage_sensor;
   }
@@ -116,7 +119,7 @@ class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingCompo
   void set_manufacturer_name_text_sensor(text_sensor::TextSensor *manufacturer_name_text_sensor) { manufacturer_name_text_sensor_ = manufacturer_name_text_sensor; }
   void set_model_number_text_sensor(text_sensor::TextSensor *model_number_text_sensor) { model_number_text_sensor_ = model_number_text_sensor; }
   void set_hardware_revision_text_sensor(text_sensor::TextSensor *hardware_revision_text_sensor) { hardware_revision_text_sensor_ = hardware_revision_text_sensor; }
-  void set_software_revision_text_sensor(text_sensor::TextSensor *software_revision_text_sensor) { software_revision_text_sensor_ = software_revision_text_sensor; }
+//  void set_software_revision_text_sensor(text_sensor::TextSensor *software_revision_text_sensor) { software_revision_text_sensor_ = software_revision_text_sensor; }
   void set_serial_number_text_sensor(text_sensor::TextSensor *serial_number_text_sensor) { serial_number_text_sensor_ = serial_number_text_sensor; }
 
 
@@ -153,6 +156,7 @@ class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingCompo
   sensor::Sensor *battery_strings_sensor_;
   sensor::Sensor *temperature_sensors_sensor_;
   sensor::Sensor *software_version_sensor_;
+  sensor::Sensor *software_revision_sensor_;
 
   switch_::Switch *charging_switch_;
   switch_::Switch *discharging_switch_;
@@ -167,7 +171,7 @@ class JbdBmsBle : public esphome::ble_client::BLEClientNode, public PollingCompo
   text_sensor::TextSensor *serial_number_text_sensor_;      // Serial Number
   text_sensor::TextSensor *hardware_revision_text_sensor_;  // Hardware Revision
   text_sensor::TextSensor *firmware_revision_text_sensor_;  // Firmware Revision
-  text_sensor::TextSensor *software_revision_text_sensor_;  // Software Revision
+ 
 
   struct Cell {
     sensor::Sensor *cell_voltage_sensor_{nullptr};
