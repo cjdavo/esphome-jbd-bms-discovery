@@ -77,8 +77,8 @@ void JbdBmsBle::gattc_event_handler(esp_gattc_cb_event_t event, esp_gatt_if_t ga
       break;
     }
     case ESP_GATTC_SEARCH_CMPL_EVT: {
-  ESP_LOGI(TAG, "GATT search completed. Discovering Device Information Service...");
-  this->discover_device_info();  // Discover DIS when GATT search completes
+      // ESP_LOGI(TAG, "GATT search completed. Discovering Device Information Service...");
+      //this->discover_device_info();  // Discover DIS when GATT search completes
 
       auto *char_notify = this->parent_->get_characteristic(JBD_BMS_SERVICE_UUID, JBD_BMS_NOTIFY_CHARACTERISTIC_UUID);
       if (char_notify == nullptr) {
@@ -576,7 +576,8 @@ std::string JbdBmsBle::error_bits_to_string_(const uint16_t mask) {
   }
   return values;
 }
-
+// ESP_LOGI(TAG, "GATT search completed. Discovering Device Information Service...");
+//  this->discover_device_info();  // Discover DIS when GATT search completes
 void JbdBmsBle::discover_device_info() {
   ESP_LOGI(TAG, "Discovering Device Information Service...");
 
